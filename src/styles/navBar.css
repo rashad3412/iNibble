@@ -1,0 +1,71 @@
+#home-logo {
+  position: absolute;
+  bottom: 10%;
+  padding-left: 10px;
+  width: 60px;
+  height: 60px;
+}
+
+.home-title {
+  position: absolute; /* or fixed */
+  top: 20%; /* Adjust as needed */
+  left: 20px; /* Adjust as needed */
+  z-index: 1; /* Ensure it stays above other elements if necessary */
+  /* Add any other styles you want for the title here */
+}
+
+#home-overlay {
+  position: absolute;
+  top: 2%;
+  left: 10%;
+  background-color: #dc143ce4;
+  z-index: 10;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  filter: contrast(1.2);
+}
+
+.hamburger {
+  color: #dc143c;
+  position: relative;
+  left: 80%;
+  background: none;
+  border: none;
+  font-size: 5em;
+  background: none;
+  border: none;
+}
+
+.navbar-list {
+  display: none;
+  list-style: none;
+  font-size: 3em;
+  z-index: 1;
+}
+.navbar {
+  position: relative;
+}
+
+.navbar-item a {
+  font-family: "Lato", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  line-height: 1.8;
+  color: #fff8f8;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-shadow: 2px 2px 4px #66fcf1;
+}
+
+.navbar-list.open {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  top: 10vh;
+  position: relative;
+}
