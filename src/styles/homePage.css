@@ -70,3 +70,43 @@
   top: 30px;
   left: 10%;
 }
+
+@media (min-width: 481px) {
+  .home-container {
+    margin-left: 25px;
+    width: 700px;
+
+    /* border: #dc143c solid 2px; */
+  }
+
+  .navbar {
+    position: relative;
+    left: 30px;
+  }
+
+  .homepage-slogan-1 {
+    font-size: 1.8rem;
+    width: 700px;
+  }
+
+  .homepage-welcome-h1 {
+    font-size: 2.5rem;
+  }
+
+  .homepage-welcome-h1 span {
+    font-size: 1.7em;
+  }
+
+  .homepage-paragraph {
+    font-size: 1.5em;
+  }
+
+  .home-container button {
+    font-size: 1.7em;
+    width: 250px;
+  }
+
+  #homepage-logo-overlay {
+    left: 65%;
+  }
+}

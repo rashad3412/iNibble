@@ -1,5 +1,6 @@
 // pages/HomePage.js
 import React from "react";
+import { Link } from "react-router-dom";
 import PageTemplate from "../components/PageTemplate";
 import logo from "../../public/assets/logo.png";
 function HomePage() {
@@ -16,7 +17,9 @@ function HomePage() {
           <p className="homepage-paragraph">
             "Empowering You with the Facts Behind Every Bite!"
           </p>
-          <button>Nibble Away</button>
+          <Link to="/aboutpage">
+            <button>Nibble Away</button>
+          </Link>
           <div id="homepage-logo-overlay">
             <img id="homepage-logo-img" src={logo} alt="iNibble Logo" />
           </div>
