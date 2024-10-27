@@ -1,10 +1,11 @@
 import React from "react";
+import PageTemplate from "../components/PageTemplate";
 
 function ContactPage() {
   return (
-    <div>
-      <h1>Contact Page</h1>
-    </div>
+    <PageTemplate>
+      <h1 className="home-title">Contact</h1>
+    </PageTemplate>
   );
 }
 

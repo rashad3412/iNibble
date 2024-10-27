@@ -1,10 +1,11 @@
 import React from "react";
+import PageTemplate from "../components/PageTemplate";
 
 function AnalyticsPage() {
   return (
-    <div>
-      <h1>Analytics Page</h1>
-    </div>
+    <PageTemplate>
+      <h1 className="home-title">Analytics</h1>
+    </PageTemplate>
   );
 }
 

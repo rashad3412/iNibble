@@ -1,13 +1,12 @@
+// pages/AboutPage.js
 import React from "react";
-import Navbar from "../components/NavBar";
+import PageTemplate from "../components/PageTemplate";
+
 function AboutPage() {
   return (
-    <>
-      <Navbar />
-      <div>
-        <h1>About Page</h1>
-      </div>
-    </>
+    <PageTemplate>
+      <h1 className="home-title">About</h1>
+    </PageTemplate>
   );
 }
 

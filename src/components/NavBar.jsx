@@ -12,22 +12,22 @@ function Navbar({ isOpen, toggleMenu }) {
       {isOpen && (
         <ul className="navbar-list open">
           <li className="navbar-item">
-            <Link to="/" onClick={toggleMenu}>
+            <Link to="/homePage" onClick={toggleMenu}>
               Home
             </Link>
           </li>
           <li className="navbar-item">
-            <Link to="/aboutpage" onClick={toggleMenu}>
+            <Link to="/aboutPage" onClick={toggleMenu}>
               About
             </Link>
           </li>
           <li className="navbar-item">
-            <Link to="/analyticspage" onClick={toggleMenu}>
+            <Link to="/analyticsPage" onClick={toggleMenu}>
               Analytics
             </Link>
           </li>
           <li className="navbar-item">
-            <Link to="/contactpage" onClick={toggleMenu}>
+            <Link to="/contactPage" onClick={toggleMenu}>
               Contact
             </Link>
           </li>

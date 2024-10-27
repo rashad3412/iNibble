@@ -1,32 +1,27 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import Navbar from "../components/NavBar";
+// pages/HomePage.js
+import React from "react";
+import PageTemplate from "../components/PageTemplate";
 import logo from "../../public/assets/logo.png";
-
 function HomePage() {
-  const [isTitlePage, setIsTitlePage] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
-
-  function toggleMenu() {
-    setIsOpen(!isOpen);
-  }
-
-  function BackToTitlePage() {
-    // function to go back to titlePage
-    setIsTitlePage(!isTitlePage);
-  }
-
   return (
     <>
-      <Navbar isOpen={isOpen} toggleMenu={toggleMenu} />
-      <div className="home-page">
-        <div id="home-overlay">
-          <Link to="/" onClick={BackToTitlePage}>
-            <img id="home-logo" src={logo} alt="iNibble Logo" />
-          </Link>
+      <PageTemplate>
+        <div className="home-container">
+          <h2 className="homepage-slogan-1">
+            “Feel Your Curiosity One Bite at a Time!”
+          </h2>
+          <h1 className="homepage-welcome-h1">
+            Welcome to i<span>N</span>ibble!
+          </h1>
+          <p className="homepage-paragraph">
+            "Empowering You with the Facts Behind Every Bite!"
+          </p>
+          <button>Nibble Away</button>
+          <div id="homepage-logo-overlay">
+            <img id="homepage-logo-img" src={logo} alt="iNibble Logo" />
+          </div>
         </div>
-        <div>{!isOpen && <h1 className="home-title">Home</h1>}</div>
-      </div>
+      </PageTemplate>
     </>
   );
 }
