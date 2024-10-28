@@ -79,11 +79,13 @@
     /* border: #dc143c solid 2px; */
   }
 
-  .navbar {
+  .navbar-list {
+    display: flex;
+    gap: 2rem;
+    flex-direction: row;
     position: relative;
-    left: 30px;
+    left: auto;
   }
-
   .homepage-slogan-1 {
     font-size: 1.8rem;
     width: 700px;
@@ -108,5 +110,17 @@
 
   #homepage-logo-overlay {
     left: 65%;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-list.desktop {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .hamburger {
+    display: none;
   }
 }

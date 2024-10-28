@@ -19,6 +19,7 @@
 }
 
 .hamburger {
+  display: block;
   color: #dc143c;
   position: relative;
   left: 80%;

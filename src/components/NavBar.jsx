@@ -1,16 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function Navbar({ isOpen, toggleMenu }) {
+  // State to track if the screen is desktop size
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 769);
+
+  // Update `isDesktop` when window resizes
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 769);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <nav className="navbar">
-      <button className="hamburger" onClick={toggleMenu}>
-        ☰
-      </button>
+      {/* Only show hamburger in mobile view */}
+      {!isDesktop && (
+        <button className="hamburger" onClick={toggleMenu}>
+          ☰
+        </button>
+      )}
 
-      {/* Conditionally render the menu based on isOpen */}
-      {isOpen && (
-        <ul className="navbar-list open">
+      {/* Show links unconditionally in desktop view, or conditionally in mobile */}
+      {(isDesktop || isOpen) && (
+        <ul className={`navbar-list ${isDesktop ? "desktop" : "open"}`}>
           <li className="navbar-item">
             <Link to="/homePage" onClick={toggleMenu}>
               Home
