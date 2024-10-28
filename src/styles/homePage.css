@@ -51,6 +51,7 @@
   background-color: #dc143c;
   color: #fff8f8;
   border: none;
+  cursor: pointer;
 }
 
 #homepage-logo-overlay {
@@ -120,7 +121,38 @@
     justify-content: flex-end;
   }
 
+  .navbar-item a {
+    position: relative;
+    top: 25px;
+    right: 40px;
+    font-size: 2rem;
+  }
+
   .hamburger {
     display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .home-container {
+    position: relative;
+    top: 90px;
+    width: 800px;
+    margin: 0 auto;
+  }
+
+  #homepage-logo-overlay {
+    position: absolute;
+    top: -20px;
+    left: 595px;
+    width: 300px;
+    height: 300px;
+  }
+  #homepage-logo-img {
+    position: relative;
+    top: 45px;
+    left: 50px;
+    width: 185px;
+    height: 185px;
   }
 }

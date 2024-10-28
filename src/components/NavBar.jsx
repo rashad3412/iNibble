@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 
 function Navbar({ isOpen, toggleMenu }) {
   // State to track if the screen is desktop size
-  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 769);
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
 
   // Update `isDesktop` when window resizes
   useEffect(() => {
     const handleResize = () => {
-      setIsDesktop(window.innerWidth >= 769);
+      setIsDesktop(window.innerWidth >= 1024);
     };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
