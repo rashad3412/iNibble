@@ -1,0 +1,53 @@
+.about-page-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 0 auto;
+  text-align: center;
+  gap: 20px;
+  width: 85%;
+  margin-top: 10%;
+  color: #fff8f8;
+}
+
+.about-title {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  color: #dc143c;
+}
+
+#about-page-paragraph {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 200;
+  line-height: 1.5;
+}
+
+.about-section {
+  background-color: rgba(255, 248, 248, 0.1); /* Subtle background */
+  padding: 20px;
+  border-radius: 8px;
+
+  border: solid 1px #66fcf1;
+}
+
+.about-section-title {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #dc143c;
+  margin-bottom: 8px;
+  letter-spacing: 0;
+}
+
+.about-section-paragraph {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 200;
+  line-height: 1.5;
+  max-width: 750px;
+  margin: 0 auto;
+  color: #fff8f8;
+}

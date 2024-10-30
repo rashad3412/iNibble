@@ -81,7 +81,7 @@ body {
 
 #logo-overlay {
   position: absolute;
-  top: 10%;
+  top: 7.5%;
   left: 50%;
   transform: translateX(-50%);
   background-color: #dc143c;
