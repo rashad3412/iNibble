@@ -1,8 +1,40 @@
 // pages/AboutPage.js
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PageTemplate from "../components/PageTemplate";
+import Modal from "../components/Modal";
+import axios from "axios";
 
 function AboutPage() {
+  const [healthFoods, setHealthFoods] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    console.log("Modal toggled");
+    setIsModalOpen(!isModalOpen);
+  };
+
+  const fetchHealthFoods = async () => {
+    try {
+      const response = await axios.get(
+        `https://api.spoonacular.com/food/ingredients/9037/information`,
+        {
+          params: {
+            apiKey: "a45d7e12ecf2482a9f0a06366e87a4b1",
+            amount: 1,
+          },
+        }
+      );
+      console.log(response);
+      setHealthFoods(response.data); // Update state with fetched data
+    } catch (error) {
+      console.error("Error fetching health foods:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchHealthFoods();
+  }, []);
+
   return (
     <PageTemplate>
       <div className="about-page-container">
@@ -22,6 +54,38 @@ function AboutPage() {
             your body, from boosting energy to fortifying health. Join us on a
             journey toward more conscious, health-focused eating.
           </p>
+
+          {/* Button to open modal */}
+          <button onClick={toggleModal} className="open-modal-button">
+            More about Healthy Eating
+          </button>
+
+          <Modal isOpen={isModalOpen} onClose={toggleModal}>
+            {/* Display the fetched health food information */}
+            {healthFoods && (
+              <div>
+                <h3>Ingredient: {healthFoods.name}</h3>
+                <img
+                  src={`https://spoonacular.com/cdn/ingredients_100x100/${healthFoods.image}`}
+                  alt={healthFoods.name}
+                  style={{ width: "100px", height: "100px" }}
+                />
+                <div>
+                  <p>
+                    Calories:{" "}
+                    {healthFoods.nutrition?.caloricBreakdown?.percentCarbs}
+                  </p>
+                  <p>
+                    Protein:{" "}
+                    {healthFoods.nutrition?.caloricBreakdown?.percentProtein}
+                  </p>
+                  <p>
+                    Fat: {healthFoods.nutrition?.caloricBreakdown?.percentFat}
+                  </p>
+                </div>
+              </div>
+            )}
+          </Modal>
         </section>
 
         <section className="about-section">
