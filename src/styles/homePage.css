@@ -127,10 +127,6 @@
     right: 40px;
     font-size: 2rem;
   }
-
-  .hamburger {
-    display: none;
-  }
 }
 
 @media (min-width: 1024px) {

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import PageTemplate from "../components/PageTemplate";
 import Modal from "../components/Modal";
 import axios from "axios";
+import { FoodDescriptions } from "../components/FoodDescriptions";
 
 function AboutPage() {
   const [healthFoods, setHealthFoods] = useState([]);
@@ -35,6 +36,9 @@ function AboutPage() {
     fetchHealthFoods();
   }, []);
 
+  const foodName = healthFoods.name?.toLowerCase();
+  const description = FoodDescriptions[foodName] || "No Descriptions!";
+
   return (
     <PageTemplate>
       <div className="about-page-container">
@@ -64,7 +68,10 @@ function AboutPage() {
             {/* Display the fetched health food information */}
             {healthFoods && (
               <div>
-                <h3>Ingredient: {healthFoods.name}</h3>
+                <h3 id="health-food-ing">
+                  {healthFoods.name?.charAt(0).toUpperCase() +
+                    healthFoods.name?.slice(1)}
+                </h3>
                 <img
                   src={`https://spoonacular.com/cdn/ingredients_100x100/${healthFoods.image}`}
                   alt={healthFoods.name}
@@ -73,15 +80,26 @@ function AboutPage() {
                 <div>
                   <p>
                     Calories:{" "}
-                    {healthFoods.nutrition?.caloricBreakdown?.percentCarbs}
+                    {Math.round(
+                      healthFoods.nutrition?.caloricBreakdown?.percentCarbs
+                    )}
+                    %
                   </p>
                   <p>
                     Protein:{" "}
-                    {healthFoods.nutrition?.caloricBreakdown?.percentProtein}
+                    {Math.round(
+                      healthFoods.nutrition?.caloricBreakdown?.percentProtein
+                    )}
+                    %
                   </p>
                   <p>
-                    Fat: {healthFoods.nutrition?.caloricBreakdown?.percentFat}
+                    Fat:{" "}
+                    {Math.round(
+                      healthFoods.nutrition?.caloricBreakdown?.percentFat
+                    )}
+                    %
                   </p>
+                  <p className="food-descriptions">{description}</p>
                 </div>
               </div>
             )}
