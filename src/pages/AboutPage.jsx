@@ -8,16 +8,22 @@ import { FoodDescriptions } from "../components/FoodDescriptions";
 function AboutPage() {
   const [healthFoods, setHealthFoods] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedFoodId, setSelectedFoodId] = useState("9037"); // Deafult food ID
+
+  const foodOptions = [
+    { id: "9037", name: "Avocado" },
+    { id: "14097", name: "Red Wine" },
+  ];
 
   const toggleModal = () => {
     console.log("Modal toggled");
     setIsModalOpen(!isModalOpen);
   };
 
-  const fetchHealthFoods = async () => {
+  const fetchHealthFoods = async (foodId) => {
     try {
       const response = await axios.get(
-        `https://api.spoonacular.com/food/ingredients/9037/information`,
+        `https://api.spoonacular.com/food/ingredients/${foodId}/information`,
         {
           params: {
             apiKey: "a45d7e12ecf2482a9f0a06366e87a4b1",
@@ -33,8 +39,12 @@ function AboutPage() {
   };
 
   useEffect(() => {
-    fetchHealthFoods();
-  }, []);
+    fetchHealthFoods(selectedFoodId);
+  }, [selectedFoodId]);
+
+  const handleFoodChange = (event) => {
+    setSelectedFoodId(event.target.value);
+  };
 
   const foodName = healthFoods.name?.toLowerCase();
   const description = FoodDescriptions[foodName] || "No Descriptions!";
@@ -59,9 +69,25 @@ function AboutPage() {
             journey toward more conscious, health-focused eating.
           </p>
 
+          {/* Dropdown for selecting different foods */}
+          <div className="label-container">
+            <label htmlFor="food-select">Choose a food: </label>
+            <select
+              id="food-select"
+              value={selectedFoodId}
+              onChange={handleFoodChange}
+            >
+              {foodOptions.map((food) => (
+                <option key={food.id} value={food.id}>
+                  {food.name}
+                </option>
+              ))}
+            </select>
+          </div>
+
           {/* Button to open modal */}
           <button onClick={toggleModal} className="open-modal-button">
-            More about Healthy Eating
+            Learn About {healthFoods.name?.toUpperCase()}
           </button>
 
           <Modal isOpen={isModalOpen} onClose={toggleModal}>

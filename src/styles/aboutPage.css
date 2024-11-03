@@ -78,23 +78,25 @@
   padding: 20px;
   border-radius: 8px;
   width: 300px;
+  height: 340px;
   text-align: center;
 }
 
 .close-button {
   background-color: #dc143c;
   color: #fff8f8;
-  position: relative;
-  width: 45px;
-  left: 47%;
-  bottom: 300px;
+  position: absolute;
+  width: 25px;
+  left: 64%;
+  top: 30%;
   border-radius: 5px;
   border: none;
+  cursor: pointer;
 }
 
 .open-modal-button {
   font-family: "Roboto", sans-serif;
-  font-size: 1.3rem;
+  font-size: 1rem;
   color: #fff8f8;
   display: block;
   margin: 0 auto;
@@ -109,9 +111,31 @@
 #health-food-ing {
   font-family: "Poppins", sans-serif;
   font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+}
+
+.label-container {
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.2px;
+  font-size: 1.2rem;
+  margin-top: 15px;
+}
+
+.label-container label {
+  font-weight: 700;
+}
+
+#food-select {
+  text-align: center;
+  color: #fff8f8;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: #dc143c solid 1px;
+  font-weight: 600;
+  border-radius: 3px;
 }
 
 .food-descriptions {
+  position: relative;
   color: #fff8f8;
   font-family: "Poppins", sans-serif;
   margin-top: 10px;
