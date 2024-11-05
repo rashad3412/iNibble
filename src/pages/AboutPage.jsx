@@ -13,8 +13,10 @@ function AboutPage() {
   const foodOptions = [
     { id: "9037", name: "Avocado" },
     { id: "14097", name: "Red Wine" },
+    { id: "5062", name: "Chicken" },
+    { id: "20444", name: "Rice" },
   ];
-
+  console.log(foodOptions);
   const toggleModal = () => {
     console.log("Modal toggled");
     setIsModalOpen(!isModalOpen);
