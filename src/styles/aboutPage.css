@@ -72,6 +72,7 @@
 }
 
 .modal-content {
+  position: relative;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   background: #ffffff;
@@ -87,8 +88,8 @@
   color: #fff8f8;
   position: absolute;
   width: 25px;
-  left: 77%;
-  top: 21%;
+  left: 88%;
+  top: 3%;
   border-radius: 5px;
   border: none;
   cursor: pointer;
