@@ -69,6 +69,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 }
 
 .modal-content {
@@ -143,4 +144,22 @@
   border: rgb(90, 89, 89) solid 1px;
   border-radius: 5px;
   background-color: #dc143c;
+}
+
+#chart-img-overlay {
+  position: relative;
+  border-radius: 50%;
+  background-color: #dc143c;
+  border: #66fcf1 solid 0.5px;
+  width: 85px;
+  height: 85px;
+  left: 37%;
+  margin-top: 5px;
+}
+
+#chart-img {
+  margin-top: 13px;
+  width: 60px;
+  height: 60px;
+  z-index: 0;
 }

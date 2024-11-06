@@ -1,6 +1,7 @@
 // pages/AboutPage.js
 import React, { useEffect, useState } from "react";
 import PageTemplate from "../components/PageTemplate";
+import chart from "../../public/assets/growth.png";
 import Modal from "../components/Modal";
 import axios from "axios";
 import { FoodDescriptions } from "../components/FoodDescriptions";
@@ -143,6 +144,9 @@ function AboutPage() {
             platform is designed to educate and empower, putting nutritional
             knowledge at your fingertips.
           </p>
+          <div id="chart-img-overlay">
+            <img id="chart-img" src={chart} alt="chart" />
+          </div>
         </section>
 
         <section className="about-section">
