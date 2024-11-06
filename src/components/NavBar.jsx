@@ -42,6 +42,11 @@ function Navbar({ isOpen, toggleMenu }) {
             </Link>
           </li>
           <li className="navbar-item">
+            <Link to="/recipesPage" onClick={toggleMenu}>
+              Recipes
+            </Link>
+          </li>
+          <li className="navbar-item">
             <Link to="/contactPage" onClick={toggleMenu}>
               Contact
             </Link>

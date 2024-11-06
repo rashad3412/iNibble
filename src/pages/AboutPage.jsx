@@ -18,9 +18,8 @@ function AboutPage() {
     { id: "20444", name: "Rice" },
     { id: "15076", name: "Salmon" },
   ];
-  console.log(foodOptions);
+
   const toggleModal = () => {
-    console.log("Modal toggled");
     setIsModalOpen(!isModalOpen);
   };
 
@@ -35,7 +34,7 @@ function AboutPage() {
           },
         }
       );
-      console.log(response);
+
       setHealthFoods(response.data); // Update state with fetched data
     } catch (error) {
       console.error("Error fetching health foods:", error);
@@ -144,8 +143,10 @@ function AboutPage() {
             platform is designed to educate and empower, putting nutritional
             knowledge at your fingertips.
           </p>
-          <div id="chart-img-overlay">
-            <img id="chart-img" src={chart} alt="chart" />
+          <div id="align-chart-img">
+            <div id="chart-img-overlay">
+              <img id="chart-img" src={chart} alt="chart" />
+            </div>
           </div>
         </section>
 
@@ -156,8 +157,9 @@ function AboutPage() {
             balanced lifestyle. At iNibble, we believe that food is a key to
             wellness, and we’re here to support you every step of the way.
           </p>
-          <p id="about-quote">“Eating well is a form of self-respect.”</p>
-          <div id="underline"></div>
+          <div id="align-about-quote">
+            <p id="about-quote">“Eating well is a form of self-respect.”</p>
+          </div>
         </section>
       </div>
     </PageTemplate>
