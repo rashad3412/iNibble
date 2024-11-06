@@ -15,6 +15,7 @@ function AboutPage() {
     { id: "14097", name: "Red Wine" },
     { id: "5062", name: "Chicken" },
     { id: "20444", name: "Rice" },
+    { id: "15076", name: "Salmon" },
   ];
   console.log(foodOptions);
   const toggleModal = () => {
