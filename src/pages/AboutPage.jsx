@@ -156,6 +156,8 @@ function AboutPage() {
             balanced lifestyle. At iNibble, we believe that food is a key to
             wellness, and we’re here to support you every step of the way.
           </p>
+          <p id="about-quote">“Eating well is a form of self-respect.”</p>
+          <div id="underline"></div>
         </section>
       </div>
     </PageTemplate>

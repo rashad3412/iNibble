@@ -21,7 +21,7 @@
 #about-page-paragraph {
   font-family: "Poppins", sans-serif;
   font-size: 1.3rem;
-  font-weight: 200;
+  font-weight: 400;
   line-height: 1.5;
 }
 
@@ -45,7 +45,7 @@
 .about-section-paragraph {
   font-family: "Poppins", sans-serif;
   font-size: 1.2rem;
-  font-weight: 200;
+  font-weight: 300;
   line-height: 1.5;
   max-width: 750px;
   margin: 0 auto;
@@ -162,4 +162,13 @@
   width: 60px;
   height: 60px;
   z-index: 0;
+}
+
+#about-quote {
+  background-color: #dc143c;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-size: 1.1rem;
+  margin-top: 20px;
+  border-radius: 10px;
 }
