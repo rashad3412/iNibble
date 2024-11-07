@@ -66,28 +66,24 @@
 
 @media (min-width: 1024px) {
   #home-logo {
-    top: 15px;
-    left: 10px;
-    width: 70px;
-    height: 70px;
+    top: 10px;
+    left: 5px;
+    width: 50px;
+    height: 50px;
   }
 
   #home-overlay {
-    left: 125px;
-    width: 100px;
-    height: 100px;
+    left: 95px;
+    width: 75px;
+    height: 75px;
   }
   .navbar-list.desktop {
     display: flex;
     align-items: center;
     justify-content: flex-end;
   }
-
-  .navbar-item a {
-    position: relative;
-    top: 25px;
-    right: 40px;
-    font-size: 2rem;
+  .navbar-list.desktop a {
+    font-size: 1.45rem;
   }
 
   .navbar-item a:hover {
