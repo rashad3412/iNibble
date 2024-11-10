@@ -6,8 +6,12 @@ import ComparisonChart from "../components/ComparisonChart";
 function AnalyticsPage() {
   return (
     <PageTemplate>
-      <h1 className="home-title">Analytics</h1>
-      <ComparisonChart />
+      <div id="home-title">
+        <div>Insights into Your Health and Wellness</div>
+      </div>
+      <div className="chart-container">
+        <ComparisonChart />
+      </div>
     </PageTemplate>
   );
 }

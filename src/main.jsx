@@ -6,6 +6,7 @@ import "../src/styles/navBar.css";
 import "../src/styles/titlePage.css";
 import "../src/styles/homePage.css";
 import "../src/styles/aboutPage.css";
+import "../src/styles/analyticsPage.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

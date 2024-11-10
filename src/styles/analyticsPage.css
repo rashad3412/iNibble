@@ -1,0 +1,19 @@
+#home-title {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: 100;
+  margin-top: 25px;
+  margin-bottom: 35px;
+  color: #fff8f8;
+}
+
+.chart-container :nth-child(1) {
+  margin-top: 25px;
+}
+.chart-container :nth-child(2) {
+  margin-top: 25px;
+}
+.chart-container :nth-child(3) {
+  margin-top: 25px;
+}
