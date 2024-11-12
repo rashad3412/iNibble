@@ -28,6 +28,9 @@ ChartJS.register(
   Legend
 );
 
+// Chart Component to create charts and add data to chart and edit data
+// Chart component is being renderd in the Comparison Chart component below
+
 function ChartComponent({ title, data, labels, chartType = "bar", color }) {
   const chartData = {
     labels: labels,
@@ -86,16 +89,18 @@ function ChartComponent({ title, data, labels, chartType = "bar", color }) {
   };
 
   // Choose chart type
-  const ChartType =
-    chartType === "line" ? Line : chartType === "scatter" ? Scatter : Bar;
+  const ChartType = chartType === "line" ? Line : Bar;
 
   return <ChartType data={chartData} options={options} />;
 }
 
+// Comparison Chart function being imported on Anaolytics page to render
 function ComparisonCharts() {
   const labels = foodComparisonData.map((item) => item.name);
 
   return (
+    /* Charts */
+
     <div>
       <ChartComponent
         title="Protein Content (g)"
@@ -111,19 +116,23 @@ function ComparisonCharts() {
         chartType="line"
         color="rgb(255, 99, 133)"
       />
-      {/* <ChartComponent
-        title="Carbs Content (g)"
-        data={foodComparisonData.map((item) => item.carbs)}
-        labels={labels}
-        chartType="scatter"
-        color="rgba(54, 162, 235, 0.6)"
-      /> */}
+
       <ChartComponent
         title="Calories"
         data={foodComparisonData.map((item) => item.calories)}
         labels={labels}
         chartType="bar"
         color="rgb(255, 207, 86)"
+      />
+      <ChartComponent
+        title="Carbs Content (g)"
+        data={foodComparisonData.map((item, index) => ({
+          x: index, // or a specific x value if available
+          y: item.carbs, // y value
+        }))}
+        labels={labels}
+        chartType="line"
+        color="rgb(17, 233, 93)"
       />
     </div>
   );
