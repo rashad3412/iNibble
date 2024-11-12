@@ -31,6 +31,26 @@
   margin-top: 25px;
 }
 
+.chart-component-desc {
+  position: relative;
+  bottom: 15px;
+  font-family: "Roboto", sans-serif;
+  margin: 0 auto;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  width: 88%;
+  color: #fff8f8;
+  font-weight: 300;
+  background-color: rgba(195, 192, 192, 0.153);
+  border: solid #66fcf1 0.5px;
+  border-radius: 10px;
+}
+
+.align-chart-desc-p {
+  position: relative;
+  bottom: 18px;
+}
+
 .align-key-isights-container {
   width: 94%;
   margin: 0 auto;

@@ -109,6 +109,14 @@ function ComparisonCharts() {
         chartType="bar"
         color="rgb(75, 192, 192)"
       />
+      <div className="chart-component-desc">
+        <h4>Protien Insight</h4>
+        <p className="align-chart-desc-p">
+          As you can see, meat is packed with protein, which helps fuel the
+          body, strengthens the immune system, and can even help reduce
+          overeating.
+        </p>
+      </div>
       <ChartComponent
         title="Fat Content (g)"
         data={foodComparisonData.map((item) => item.fat)}
