@@ -22,9 +22,12 @@ function AnalyticsPage() {
         className="chart-container"
         style={{ width: "95%", margin: "0 auto" }}
       >
+        <p id="chart-info">
+          For accurate numbers data click bars or dots in charts
+        </p>
         <ComparisonChart />
       </div>
-      <div>
+      <div className="align-key-isights-container">
         <h2 id="analytics-h2">Key Insights</h2>
         <ul className="key-insights-container">
           {keyInsights.map((insight, index) => (

@@ -118,7 +118,7 @@ function ComparisonCharts() {
       />
 
       <ChartComponent
-        title="Calories"
+        title="Calories (g)"
         data={foodComparisonData.map((item) => item.calories)}
         labels={labels}
         chartType="bar"
