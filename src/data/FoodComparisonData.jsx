@@ -7,16 +7,16 @@ const foodComparisonData = [
     protein: 31,
     fat: 3.6,
     carbs: 0,
-    calories: 165,
+    calories: 2,
   },
-  { name: "Beef", type: "Meat", protein: 26, fat: 20, carbs: 0, calories: 250 },
+  { name: "Beef", type: "Meat", protein: 26, fat: 20, carbs: 0, calories: 2 },
   {
-    name: "Broccoli",
-    type: "Vegetable",
-    protein: 2.8,
-    fat: 0.4,
-    carbs: 6.6,
-    calories: 55,
+    name: "Salmon",
+    type: "Meat",
+    protein: 40,
+    fat: 27,
+    carbs: 0,
+    calories: 2,
   },
   {
     name: "Spinach",
@@ -26,6 +26,15 @@ const foodComparisonData = [
     carbs: 3.6,
     calories: 23,
   },
+  {
+    name: "Sweet Corn",
+    type: "Vegetable",
+    protein: 2.9,
+    fat: 1.1,
+    carbs: 17,
+    calories: 77,
+  },
+
   // Add more items as needed
 ];
 

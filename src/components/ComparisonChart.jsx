@@ -94,7 +94,7 @@ function ChartComponent({ title, data, labels, chartType = "bar", color }) {
   return <ChartType data={chartData} options={options} />;
 }
 
-// Comparison Chart function being imported on Anaolytics page to render
+// Comparison Chart function being imported on Analytics page to render
 function ComparisonCharts() {
   const labels = foodComparisonData.map((item) => item.name);
 
