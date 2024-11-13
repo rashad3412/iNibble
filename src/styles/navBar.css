@@ -11,7 +11,7 @@
   position: absolute;
   top: 2%;
   left: 7%;
-  background-color: #dc143ce4;
+  background-color: #dc143ce8;
   z-index: 10;
   width: 75px;
   height: 75px;
@@ -20,8 +20,9 @@
 }
 
 .hamburger {
+  position: fixed;
   display: block;
-  color: #dc143c;
+  color: #dc143ce8;
   position: relative;
   left: 80%;
   background: none;

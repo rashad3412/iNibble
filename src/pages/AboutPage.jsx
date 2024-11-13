@@ -13,10 +13,14 @@ function AboutPage() {
 
   const foodOptions = [
     { id: "9037", name: "Avocado" },
+    { id: "15167", name: "Oysters" },
     { id: "14097", name: "Red Wine" },
+    { id: "20028", name: "Couscous" },
     { id: "5062", name: "Chicken" },
     { id: "20444", name: "Rice" },
     { id: "15076", name: "Salmon" },
+    { id: "10015121", name: "Tuna" },
+    { id: "9316", name: "Strawberries" },
   ];
 
   const toggleModal = () => {
@@ -58,9 +62,7 @@ function AboutPage() {
         <h1 className="about-title">Discover Your Food’s Story</h1>
         <p id="about-page-paragraph">
           iNibble gives you insights into the food you eat, helping you
-          understand how each nibble can nourish and protect you. Make informed
-          choices and start each day with the confidence that what you eat
-          supports a healthier, more vibrant life.
+          understand how each nibble can nourish and protect you.
         </p>
 
         <section className="about-section">
@@ -68,8 +70,7 @@ function AboutPage() {
           <p className="about-section-paragraph">
             Our goal is to make eating a mindful and rewarding experience. We
             provide clear, easily accessible information about how food impacts
-            your body, from boosting energy to fortifying health. Join us on a
-            journey toward more conscious, health-focused eating.
+            your body.
           </p>
 
           {/* Dropdown for selecting different foods */}
@@ -139,9 +140,7 @@ function AboutPage() {
           <h2 className="about-section-title">How iNibble Works</h2>
           <p className="about-section-paragraph">
             With data-driven insights and a personalized touch, iNibble allows
-            you to track what you eat and how it affects your well-being. Our
-            platform is designed to educate and empower, putting nutritional
-            knowledge at your fingertips.
+            you to track what you eat and how it affects your well-being.
           </p>
           <div id="align-chart-img">
             <div id="chart-img-overlay">
