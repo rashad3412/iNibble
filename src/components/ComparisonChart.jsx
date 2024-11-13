@@ -12,7 +12,10 @@ import {
   Legend,
 } from "chart.js";
 import { Bar, Line } from "react-chartjs-2";
+
 import foodComparisonData from "../data/FoodComparisonData";
+import plugins from "chartjs-plugin-datalabels";
+console.log(plugins);
 
 // Register required components for Chart.js
 ChartJS.register(
@@ -45,43 +48,37 @@ function ChartComponent({ title, data, labels, chartType = "bar", color }) {
   const options = {
     responsive: true,
     plugins: {
-      legend: { display: false },
-      title: { display: true, text: title },
-    },
-    plugins: {
       legend: {
+        display: true,
         labels: {
           font: {
             size: 14,
-            family: "Arial", // Font family for chart labels
+            family: "Arial",
           },
-          color: "#ffff", // Legend color
+          color: "#ffff",
+        },
+      },
+
+      datalabels: {
+        color: "#fff",
+        font: { weight: "bold" },
+      },
+      tooltip: {
+        enabled: true,
+        callbacks: {
+          label: (tooltipItem) => `Value: ${tooltipItem.raw}`,
         },
       },
     },
     scales: {
       x: {
-        ticks: {
-          color: "#ffff",
-          font: { size: 12 },
-        },
-        title: {
-          display: true,
-          color: "#ffff",
-          font: { size: 14 },
-        },
-        grid: {
-          color: "#888888", // Darker grid lines on Y-axis
-        },
+        ticks: { color: "#ffff", font: { size: 12 } },
+        title: { display: true, color: "#ffff", font: { size: 14 } },
+        grid: { color: "#888888" },
       },
       y: {
-        ticks: {
-          color: "#ffff",
-          font: { size: 12 },
-        },
-        grid: {
-          color: "#888888", // Darker grid lines on Y-axis
-        },
+        ticks: { color: "#ffff", font: { size: 12 } },
+        grid: { color: "#888888" },
       },
     },
   };
