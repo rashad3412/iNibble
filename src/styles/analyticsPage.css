@@ -116,3 +116,15 @@ h4 {
   list-style-type: disc;
   margin-bottom: 5px;
 }
+
+@media (min-width: 1024px) {
+  #home-title {
+    letter-spacing: 3px;
+    position: relative;
+    top: 45px;
+  }
+  #chart-info {
+    position: relative;
+    top: 15px;
+  }
+}
