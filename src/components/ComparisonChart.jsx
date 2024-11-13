@@ -94,7 +94,7 @@ function ComparisonCharts() {
   const labels = foodComparisonData.map((item) => item.name);
 
   return (
-    /* Charts */
+    /* This is returning the chart data from the chartComponent and Comparison Chat is rendering data from the FoodComparison Object Literal */
 
     <div>
       <ChartComponent
@@ -104,15 +104,16 @@ function ComparisonCharts() {
         chartType="bar"
         color="rgb(75, 192, 192)"
       />
-      ;
+      {/* Chart Descriptions for Protien content */};
       <div className="chart-component-desc">
-        <h4>Protien Insight</h4>
+        <h4>Protien Insights</h4>
         <p className="align-chart-desc-p">
           As you can see, meat is packed with protein, which helps fuel the
           body, strengthens the immune system, and can even help reduce
           overeating.
         </p>
       </div>
+      {/*  */}
       <ChartComponent
         title="Fat Content (g)"
         data={foodComparisonData.map((item) => item.fat)}
@@ -120,6 +121,18 @@ function ComparisonCharts() {
         chartType="line"
         color="rgb(255, 99, 133)"
       />
+      {/* Chart Descriptions for Fat content */};
+      <div className="align-chart-component-desc-fat">
+        <div className="chart-component-desc">
+          <h4 id="chart-h4">Fat Insights</h4>
+          <p className="align-chart-desc-p">
+            Foods with fat content varies but the meat is taking much of fat
+            content. Fat is a source of energy and fat helps your body absorbs
+            fat-soluble vitamins A,D,E.
+          </p>
+        </div>
+      </div>
+      {/*  */}
       <ChartComponent
         title="Calories (g)"
         data={foodComparisonData.map((item) => item.calories)}
@@ -127,6 +140,17 @@ function ComparisonCharts() {
         chartType="bar"
         color="rgb(255, 207, 86)"
       />
+      {/* Chart Descriptions for Calories content */};
+      <div className="align-chart-component-desc-cal">
+        <div className="chart-component-desc">
+          <h4 id="chart-h4">Calorie Insights</h4>
+          <p className="align-chart-desc-p">
+            Calories are used for many bodily functions, including breathing,
+            circulating blood, and physical activity.
+          </p>
+        </div>
+      </div>
+      {/*  */}
       <ChartComponent
         title="Carbs Content (g)"
         data={foodComparisonData.map((item, index) => ({
@@ -137,6 +161,17 @@ function ComparisonCharts() {
         chartType="line"
         color="rgb(17, 233, 93)"
       />
+      {/* Chart Descriptions for Carbs content */};
+      <div className="align-chart-component-desc-carbs">
+        <div className="chart-component-desc">
+          <h4 id="chart-h4">Carbs Insights</h4>
+          <p className="align-chart-desc-p">
+            Carbs contain essential nutrients like vitamins and minerals. For
+            example, potatoes are a good source of potassium, fiber, and vitamin
+            C.
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
