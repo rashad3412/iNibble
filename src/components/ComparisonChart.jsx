@@ -11,10 +11,8 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { Bar, Line, Scatter } from "react-chartjs-2";
-import ChartDataLabels from "chartjs-plugin-datalabels";
+import { Bar, Line } from "react-chartjs-2";
 import foodComparisonData from "../data/FoodComparisonData";
-import plugin from "chartjs-plugin-datalabels";
 
 // Register required components for Chart.js
 ChartJS.register(
@@ -109,6 +107,7 @@ function ComparisonCharts() {
         chartType="bar"
         color="rgb(75, 192, 192)"
       />
+      ;
       <div className="chart-component-desc">
         <h4>Protien Insight</h4>
         <p className="align-chart-desc-p">
@@ -124,7 +123,6 @@ function ComparisonCharts() {
         chartType="line"
         color="rgb(255, 99, 133)"
       />
-
       <ChartComponent
         title="Calories (g)"
         data={foodComparisonData.map((item) => item.calories)}
