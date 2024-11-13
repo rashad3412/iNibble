@@ -114,7 +114,7 @@ function ComparisonCharts() {
         <p className="align-chart-desc-p">
           As you can see, meat is packed with protein, which helps fuel the
           body, strengthens the immune system, and can even help reduce
-          overeating.
+          overeating..
         </p>
       </div>
       <ChartComponent
