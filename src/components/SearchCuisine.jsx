@@ -1,20 +1,28 @@
 import React, { useState, useEffect } from "react";
 
 function FetchCuisine() {
-  const [recipes, setRecipes] = useState([]); // store recipes
-  const [selectedRecipe, setSelectedRecipe] = useState(null); // store details of selected recipe
-  const [query, setQuery] = useState("american"); // store the cuisine type (default: American)
+  const [recipes, setRecipes] = useState([]); // Store recipes
+  const [selectedRecipe, setSelectedRecipe] = useState(null); // Store selected recipe details
+  const [query, setQuery] = useState(""); // Store selected cuisine type
 
   const apiKey = "a45d7e12ecf2482a9f0a06366e87a4b1";
+  const cuisines = [
+    "African",
+    "Asian",
+    "American",
+    "European",
+    "Italian",
+    "Mexican",
+  ]; // Smaller list of cuisines
 
   // Fetch recipes based on cuisine type
   const fetchRecipesCuisine = async (cuisineType) => {
     try {
       const response = await fetch(
-        `https://api.spoonacular.com/recipes/complexSearch?cuisine=${cuisineType}&apiKey=${apiKey}`
+        `https://api.spoonacular.com/recipes/complexSearch?cuisine=${cuisineType}&number=10&addRecipeInformation=true&apiKey=${apiKey}`
       );
       const data = await response.json();
-      setRecipes(data.results);
+      setRecipes(data.results || []); // Handle cases where no recipes are found
     } catch (error) {
       console.error("Error fetching recipes", error);
     }
@@ -33,10 +41,11 @@ function FetchCuisine() {
     }
   };
 
-  // Fetch recipes when the component loads or when the query changes
-  useEffect(() => {
-    fetchRecipesCuisine(query);
-  }, [query]);
+  // Handle cuisine change from dropdown
+  const handleCuisineChange = (cuisineType) => {
+    setQuery(cuisineType); // Update the query state
+    fetchRecipesCuisine(cuisineType); // Fetch recipes for the selected cuisine
+  };
 
   // RecipeDetails Component
   function RecipeDetails({ recipe, onBack }) {
@@ -45,7 +54,7 @@ function FetchCuisine() {
         <button onClick={onBack}>Back</button>
         <h2>{recipe.title}</h2>
         <img src={recipe.image} alt={recipe.title} />
-        <h3>Summary: </h3>
+        <h3>Summary:</h3>
         <p>{recipe.summary.replace(/<\/?[^>]+(>|$)/g, "")}</p>
         <h3>Ingredients:</h3>
         <ul>
@@ -61,16 +70,23 @@ function FetchCuisine() {
 
   return (
     <div>
-      <h1>Cuisine Recipes</h1>
-
-      {/* Input to change the cuisine type */}
-      <input
-        type="text"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        placeholder="Enter cuisine type (e.g., Italian)"
-      />
-      <button onClick={() => fetchRecipesCuisine(query)}>Search</button>
+      <div className="cuisine-container">
+        {/* Dropdown to select cuisine */}
+        <select
+          id="cuisine-dropdown"
+          value={query}
+          onChange={(e) => handleCuisineChange(e.target.value)}
+        >
+          <option value="" disabled>
+            Select a cuisine
+          </option>
+          {cuisines.map((cuisine) => (
+            <option key={cuisine} value={cuisine.toLowerCase()}>
+              {cuisine}
+            </option>
+          ))}
+        </select>
+      </div>
 
       {/* Show details of the selected recipe */}
       {selectedRecipe ? (
@@ -78,8 +94,8 @@ function FetchCuisine() {
           recipe={selectedRecipe}
           onBack={() => setSelectedRecipe(null)}
         />
-      ) : (
-        // Show recipe titles
+      ) : // Show recipe titles
+      recipes.length > 0 ? (
         <ul>
           {recipes.map((recipe) => (
             <li key={recipe.id}>
@@ -89,6 +105,8 @@ function FetchCuisine() {
             </li>
           ))}
         </ul>
+      ) : (
+        query && <p>No recipes found for {query} cuisine.</p>
       )}
     </div>
   );
