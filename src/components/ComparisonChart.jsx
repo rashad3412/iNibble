@@ -15,7 +15,6 @@ import { Bar, Line } from "react-chartjs-2";
 
 import foodComparisonData from "../data/FoodComparisonData";
 import plugins from "chartjs-plugin-datalabels";
-console.log(plugins);
 
 // Register required components for Chart.js
 ChartJS.register(
