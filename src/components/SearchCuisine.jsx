@@ -41,8 +41,8 @@ function FetchCuisine() {
     }
   };
 
-  // Handle cuisine change from dropdown
   const handleCuisineChange = (cuisineType) => {
+    setSelectedRecipe(null); // Reset the selected recipe
     setQuery(cuisineType); // Update the query state
     fetchRecipesCuisine(cuisineType); // Fetch recipes for the selected cuisine
   };
@@ -50,20 +50,25 @@ function FetchCuisine() {
   // RecipeDetails Component
   function RecipeDetails({ recipe, onBack }) {
     return (
-      <div>
-        <button onClick={onBack}>Back</button>
+      <div className="recipe-details-container">
         <h2>{recipe.title}</h2>
         <img src={recipe.image} alt={recipe.title} />
         <h3>Summary:</h3>
         <p>{recipe.summary.replace(/<\/?[^>]+(>|$)/g, "")}</p>
         <h3>Ingredients:</h3>
         <ul>
-          {recipe.extendedIngredients.map((ingredient) => (
-            <li key={ingredient.id}>{ingredient.original}</li>
+          {recipe.extendedIngredients.map((ingredient, index) => (
+            <li key={ingredient.id || `ingredient-${index}`}>
+              {ingredient.original}
+            </li>
           ))}
         </ul>
         <h3>Instructions:</h3>
-        <p>{recipe.instructions || "No instructions provided."}</p>
+        <p>
+          {recipe.instructions.replace(/<\/?[^>]+(>|$)/g, "") ||
+            "No instructions provided."}
+        </p>
+        <button onClick={onBack}>Back To Recipes</button>
       </div>
     );
   }
@@ -96,15 +101,17 @@ function FetchCuisine() {
         />
       ) : // Show recipe titles
       recipes.length > 0 ? (
-        <ul>
-          {recipes.map((recipe) => (
-            <li key={recipe.id}>
-              <button onClick={() => fetchRecipeDetails(recipe.id)}>
-                {recipe.title}
-              </button>
-            </li>
-          ))}
-        </ul>
+        <div className="recipe-button-container">
+          <ul>
+            {recipes.map((recipe) => (
+              <li key={recipe.id}>
+                <button onClick={() => fetchRecipeDetails(recipe.id)}>
+                  {recipe.title}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
       ) : (
         query && <p>No recipes found for {query} cuisine.</p>
       )}

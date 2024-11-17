@@ -7,8 +7,8 @@ function RecipesPage() {
     <PageTemplate>
       <header>
         <h1 id="recipe-page-h1">
-          Explore <span class="highlight">Delicious Recipes</span> from Around
-          the World!
+          Explore <span className="highlight">Delicious Recipes</span> from
+          Around the World!
         </h1>
         <p>
           Discover a variety of cuisines to inspire your next meal. Select a

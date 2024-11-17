@@ -39,18 +39,15 @@ header p {
   width: 200px;
   padding: 10px;
   border-radius: 10px;
-  border: 2px solid #4caf50; /* Green border */
-  background: linear-gradient(
-    to right,
-    #66fcf251,
-    #81c784
-  ); /* Gradient background */
+  border: #dc143c solid 2px;
+  border-left: #66fcf1 solid 2px;
+  border-right: #66fcf1 solid 2px;
+  background-color: rgba(255, 248, 248, 0.1);
   color: white;
   font-size: 1.1rem;
   font-weight: bold;
   transition: all 0.3s ease;
   outline: none;
-  box-shadow: rgba(255, 248, 248, 0.1);
   cursor: pointer;
 }
 
@@ -58,10 +55,115 @@ header p {
   text-align: center;
 }
 
-#recipe-input-box {
+.recipe-button-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 buttons per row */
+  gap: 1rem; /* Space between buttons */
+  padding: 1rem;
+  /* background-color: rgba(255, 248, 248, 0.1); */
+  border-radius: 8px; /* Optional: Rounded corners */
+  margin-top: 30px;
+}
+
+.recipe-button-container ul {
+  list-style: none; /* Remove bullets */
+  display: contents;
+}
+
+.recipe-button-container li {
   display: flex;
-  justify-content: center;
+  justify-content: center; /* Center-align button horizontally */
+}
+
+.recipe-button-container button {
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.5px;
+  background-color: rgba(255, 248, 248, 0.1);
+  color: #fff8f8; /* Dark text color */
+  padding: 0.75rem 1rem; /* Padding for buttons */
+  border: #dc143c solid 2px;
+  border-left: #66fcf1 solid 2px;
+  border-right: #66fcf1 solid 2px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: center;
+  text-shadow: 2px 2px 10px #66fcf251;
+  box-shadow: 2px 2px 10px #66fcf251;
+}
+
+.recipe-details-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 800px; /* Limit width for readability */
+  margin: 30px auto; /* Center the container */
+  padding: 20px;
+  background-color: rgba(255, 248, 248, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #ffffff; /* Text color for contrast */
+  font-family: "Roboto", sans-serif;
+}
+
+.recipe-details-container button {
+  background-color: #e91e63; /* Accent color */
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.recipe-details-container button:hover {
+  background-color: #c2185b; /* Darker shade on hover */
+  transform: scale(1.05); /* Slight scaling effect */
+}
+
+.recipe-details-container h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin: 0;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.recipe-details-container img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
   margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  grid-column: 1 / -1; /* Image spans across the grid */
+}
+
+.recipe-details-container h3 {
+  font-size: 1.5rem;
+  color: #e91e63; /* Secondary accent color */
+  text-shadow: 1px 1px 5px rgba(169, 166, 166, 0.2);
+}
+
+.recipe-details-container p,
+.recipe-details-container ul {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #fff8f8;
+  margin: 0;
+  padding: 0 10px;
+  grid-column: 1 / -1; /* Text spans across the grid */
+}
+
+.recipe-details-container ul {
+  list-style: square;
+  padding-left: 20px; /* Add padding for list */
+}
+
+.recipe-details-container ul li {
+  margin-bottom: 5px; /* Space between list items */
 }
 
 #query-h1 {
@@ -78,4 +180,28 @@ header p {
   font-size: 1.2rem;
   color: #555;
   margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+  .recipe-details-container {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* Two-column layout for larger screens */
+    gap: 30px;
+  }
+
+  .recipe-details-container img {
+    grid-column: 1 / 2; /* Image stays in the first column */
+  }
+
+  .recipe-details-container h2,
+  .recipe-details-container h3,
+  .recipe-details-container p,
+  .recipe-details-container ul {
+    grid-column: 2 / 3; /* Content moves to the second column */
+  }
+}
+recipe-details-container img {
+  grid-column: 1 / 2; /* Image stays in the first column */
 }
