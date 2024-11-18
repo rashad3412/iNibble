@@ -8,6 +8,7 @@ import "../src/styles/homePage.css";
 import "../src/styles/aboutPage.css";
 import "../src/styles/analyticsPage.css";
 import "../src/styles/recipePage.css";
+import "../src/styles/contactPage.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
