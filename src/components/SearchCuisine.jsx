@@ -7,12 +7,13 @@ function FetchCuisine() {
 
   const apiKey = "a45d7e12ecf2482a9f0a06366e87a4b1";
   const cuisines = [
-    "African",
+    "Southern",
     "Asian",
     "American",
-    "European",
+    "Caribbean",
     "Italian",
     "Mexican",
+    "Cajun",
   ]; // Smaller list of cuisines
 
   // Fetch recipes based on cuisine type
@@ -22,6 +23,7 @@ function FetchCuisine() {
         `https://api.spoonacular.com/recipes/complexSearch?cuisine=${cuisineType}&number=10&addRecipeInformation=true&apiKey=${apiKey}`
       );
       const data = await response.json();
+      console.log(data);
       setRecipes(data.results || []); // Handle cases where no recipes are found
     } catch (error) {
       console.error("Error fetching recipes", error);
@@ -35,6 +37,7 @@ function FetchCuisine() {
         `https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}`
       );
       const data = await response.json();
+      console.log(data);
       setSelectedRecipe(data); // Update state with fetched recipe details
     } catch (error) {
       console.error("Error fetching recipe details:", error);
@@ -54,19 +57,29 @@ function FetchCuisine() {
         <h2>{recipe.title}</h2>
         <img src={recipe.image} alt={recipe.title} />
         <h3>Summary:</h3>
-        <p>{recipe.summary.replace(/<\/?[^>]+(>|$)/g, "")}</p>
+        <p>
+          {recipe.summary
+            ? recipe.summary.replace(/<\/?[^>]+(>|$)/g, "")
+            : "No summary available."}
+        </p>
         <h3>Ingredients:</h3>
         <ul>
-          {recipe.extendedIngredients.map((ingredient, index) => (
-            <li key={ingredient.id || `ingredient-${index}`}>
-              {ingredient.original}
-            </li>
-          ))}
+          {recipe.extendedIngredients &&
+          recipe.extendedIngredients.length > 0 ? (
+            recipe.extendedIngredients.map((ingredient, index) => (
+              <li key={ingredient.id || `ingredient-${index}`}>
+                {ingredient.original}
+              </li>
+            ))
+          ) : (
+            <li>No ingredients provided.</li>
+          )}
         </ul>
         <h3>Instructions:</h3>
         <p>
-          {recipe.instructions.replace(/<\/?[^>]+(>|$)/g, "") ||
-            "No instructions provided."}
+          {recipe.instructions
+            ? recipe.instructions.replace(/<\/?[^>]+(>|$)/g, "")
+            : "No instructions provided."}
         </p>
         <button onClick={onBack}>Back To Recipes</button>
       </div>
