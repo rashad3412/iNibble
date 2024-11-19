@@ -81,7 +81,10 @@ function FetchCuisine() {
             ? recipe.instructions.replace(/<\/?[^>]+(>|$)/g, "")
             : "No instructions provided."}
         </p>
-        <button onClick={onBack}>Back To Recipes</button>
+
+        <button id="back-button" onClick={onBack}>
+          Back To Recipes
+        </button>
       </div>
     );
   }

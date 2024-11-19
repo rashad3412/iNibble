@@ -138,9 +138,10 @@
   }
 
   #homepage-logo-overlay {
-    position: absolute;
-    top: -20px;
-    left: 595px;
+    position: relative;
+    top: -305px;
+    margin-left: 145px;
+    margin-bottom: 200px;
     width: 300px;
     height: 300px;
   }
