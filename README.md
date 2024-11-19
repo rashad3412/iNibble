@@ -25,19 +25,16 @@ iNibble is a web application that empowers users to make informed food choices b
 
 ## How to Run Locally 🚀
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/YourGitHubUsername/iNibble.git
-   ```
+## Getting Started 🚀
 
-2.Navigate to the project directory:
-cd iNibble
+Follow these steps to set up the iNibble project on your local machine:
 
-3.Install dependencies:
-npm install
+### 1. Clone the Repository
 
-4.Start development server
-npm start
+First, clone the repository to your local machine using the following command:
+
+```bash
+git clone https://github.com/YourGitHubUsername/iNibble.git
 
 ## Future Enhancements 🔮
 
@@ -56,3 +53,4 @@ This project was inspired by the idea of creating a platform that bridges the ga
 - **LinkedIn:** [Rashad Edwards](https://www.linkedin.com/in/rashad-edwards-software-developer/)
 
 Feel free to contribute or reach out with feedback!
+```
