@@ -68,7 +68,7 @@ function AboutPage() {
   const description = FoodDescriptions[foodName] || "No Descriptions!";
 
   return (
-    <PageTemplate hideNavbar={isDesktop}>
+    <PageTemplate>
       <div className="about-page-container">
         <h1 className="about-title">Discover Your Food’s Story</h1>
         <p id="about-page-paragraph">

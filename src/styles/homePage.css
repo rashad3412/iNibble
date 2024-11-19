@@ -135,6 +135,7 @@
     top: 90px;
     width: 800px;
     margin: 0 auto;
+    left: 5%;
   }
 
   #homepage-logo-overlay {
@@ -153,16 +154,23 @@
     height: 185px;
   }
 }
-@media (min-width: 1440px) {
-  .home-container {
-    top: 125px;
-    position: relative;
-    left: 10%;
 
-    margin-left: 100px;
-  }
+@media (min-width: 1425px) {
+  /* html {
+    margin: 0 auto;
+    max-width: 1300px;
+  } */
 
   #homepage-logo-overlay {
-    margin-left: 240px;
+    margin-left: 320px;
+  }
+  .homepage-slogan-1 {
+    margin-left: 120px;
+  }
+  .homepage-welcome-h1 {
+    margin-left: 120px;
+  }
+  .homepage-paragraph {
+    margin-left: 120px;
   }
 }

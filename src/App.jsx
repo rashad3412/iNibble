@@ -18,13 +18,6 @@ function App() {
         <Route path="/contactPage" element={<ContactPage />} />
         <Route path="/recipesPage" element={<RecipesPage />} />
       </Routes>
-
-      <div className="app-container desktop-stacked">
-        <AboutPage />
-        {/* <RecipesPages />
-        <AnalyticsPage />
-        <ContactPage /> */}
-      </div>
     </Router>
   );
 }

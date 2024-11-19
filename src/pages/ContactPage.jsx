@@ -11,27 +11,14 @@ function ContactPage() {
           to say hello.
         </p>
         <form id="contact-form">
-          <label for="name">Name</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Your name"
-            required
-          />
+          <label>Name</label>
+          <input type="text" name="name" placeholder="Your name" required />
 
-          <label for="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Your email"
-            required
-          />
+          <label>Email</label>
+          <input id="email" name="email" placeholder="Your email" required />
 
-          <label for="message">Message</label>
+          <label>Message</label>
           <textarea
-            id="message"
             name="message"
             placeholder="Your message"
             rows="5"
@@ -42,8 +29,8 @@ function ContactPage() {
             Send Message
           </button>
         </form>
-        <div id="contact-info">
-          <p>
+        <div>
+          <p id="contact-email">
             Email: <a href="mailto:support@inibble.com">support@inibble.com</a>
           </p>
         </div>
