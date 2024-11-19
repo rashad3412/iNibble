@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import logo from "../../public/assets/logo.png";
 
 // This PageTemplate component is for the navigation bar to be set on each page.
-function PageTemplate({ children }) {
+function PageTemplate({ children, hideNavbar }) {
   const [isOpen, setIsOpen] = useState(false);
 
   function toggleMenu() {
@@ -14,7 +14,8 @@ function PageTemplate({ children }) {
 
   return (
     <>
-      <Navbar isOpen={isOpen} toggleMenu={toggleMenu} />
+      {/* Conditionally render Navbar */}
+      {!hideNavbar && <Navbar isOpen={isOpen} toggleMenu={toggleMenu} />}
       <div className="home-page">
         <div id="home-overlay">
           <Link to="/">

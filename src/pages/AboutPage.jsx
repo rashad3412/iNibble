@@ -10,6 +10,7 @@ function AboutPage() {
   const [healthFoods, setHealthFoods] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedFoodId, setSelectedFoodId] = useState("9037"); // Deafult food ID
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
 
   const foodOptions = [
     { id: "9037", name: "Avocado" },
@@ -46,6 +47,16 @@ function AboutPage() {
   };
 
   useEffect(() => {
+    function handleResize() {
+      setIsDesktop(window.innerWidth >= 1024);
+    }
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
     fetchHealthFoods(selectedFoodId);
   }, [selectedFoodId]);
 
@@ -57,7 +68,7 @@ function AboutPage() {
   const description = FoodDescriptions[foodName] || "No Descriptions!";
 
   return (
-    <PageTemplate>
+    <PageTemplate hideNavbar={isDesktop}>
       <div className="about-page-container">
         <h1 className="about-title">Discover Your Food’s Story</h1>
         <p id="about-page-paragraph">

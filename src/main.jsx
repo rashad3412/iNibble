@@ -9,6 +9,7 @@ import "../src/styles/aboutPage.css";
 import "../src/styles/analyticsPage.css";
 import "../src/styles/recipePage.css";
 import "../src/styles/contactPage.css";
+import "../src/styles/appMediaQuery.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

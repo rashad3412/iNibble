@@ -153,3 +153,16 @@
     height: 185px;
   }
 }
+@media (min-width: 1440px) {
+  .home-container {
+    top: 125px;
+    position: relative;
+    left: 10%;
+
+    margin-left: 100px;
+  }
+
+  #homepage-logo-overlay {
+    margin-left: 240px;
+  }
+}
