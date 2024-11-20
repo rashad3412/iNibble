@@ -1,3 +1,7 @@
+.homepage-body {
+  max-width: 1200px;
+}
+
 .home-container {
   display: grid;
   grid-template-rows: repeat(1, 1f);
@@ -72,6 +76,12 @@
   left: 10%;
 }
 
+@media (min-width: 320px) {
+  .features-section {
+    display: none;
+  }
+}
+
 @media (min-width: 481px) {
   .home-container {
     margin-left: 25px;
@@ -112,6 +122,10 @@
   #homepage-logo-overlay {
     left: 65%;
   }
+
+  .features-section {
+    display: none;
+  }
 }
 
 @media (min-width: 768px) {
@@ -139,7 +153,7 @@
   }
 
   #homepage-logo-overlay {
-    position: relative;
+    position: absolute;
     top: -305px;
     margin-left: 145px;
     margin-bottom: 200px;
@@ -153,13 +167,54 @@
     width: 185px;
     height: 185px;
   }
+
+  .features-section {
+    font-family: "Roboto", sans-serif;
+    position: absolute;
+    top: 300px;
+    left: -25px;
+    display: block;
+    text-align: center;
+    width: 95%;
+    background-color: rgba(255, 248, 248, 0.1);
+    border-radius: 8px;
+    border: #66fcf1 solid 0.5px;
+    box-shadow: 2px 2px 10px #66fcf272;
+  }
+
+  .features-section h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #fff8f8; /* Deep Navy */
+  }
+
+  .features-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .features-list li {
+    font-size: 1.8rem;
+    color: #fff8f8; /* Soft Teal */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .features-section span {
+    font-size: 3.8rem;
+    color: #dc143c;
+  }
 }
 
 @media (min-width: 1425px) {
-  /* html {
+  .homepage-body {
     margin: 0 auto;
-    max-width: 1300px;
-  } */
+  }
+
+  .features-section {
+    top: 430px;
+  }
 
   #homepage-logo-overlay {
     margin-left: 320px;

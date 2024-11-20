@@ -10,8 +10,11 @@ function AboutPage() {
   const [healthFoods, setHealthFoods] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedFoodId, setSelectedFoodId] = useState("9037"); // Deafult food ID
+
+  // used for resposive web design
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
 
+  // food options object literal to add food descriptions based on name: value
   const foodOptions = [
     { id: "9037", name: "Avocado" },
     { id: "15167", name: "Oysters" },
@@ -47,16 +50,6 @@ function AboutPage() {
   };
 
   useEffect(() => {
-    function handleResize() {
-      setIsDesktop(window.innerWidth >= 1024);
-    }
-
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  useEffect(() => {
     fetchHealthFoods(selectedFoodId);
   }, [selectedFoodId]);
 
@@ -66,6 +59,19 @@ function AboutPage() {
 
   const foodName = healthFoods.name?.toLowerCase();
   const description = FoodDescriptions[foodName] || "No Descriptions!";
+
+  /////////////////////////////////////////////////////
+
+  // useEffect to set the attribute based on 1024px frame
+  useEffect(() => {
+    function handleResize() {
+      setIsDesktop(window.innerWidth >= 1024);
+    }
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <PageTemplate>
@@ -140,6 +146,7 @@ function AboutPage() {
                     )}
                     %
                   </p>
+                  {/* getting the object literal food descriptions from food descriptions component and rendering it */}
                   <p className="food-descriptions">{description}</p>
                 </div>
               </div>

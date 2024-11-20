@@ -1,5 +1,5 @@
 // src/data/foodComparisonData.js
-
+// food comparison data is the dummy data being used to render on the charts in the ComparisonChart.jsx file
 const foodComparisonData = [
   {
     name: "Chicken",
