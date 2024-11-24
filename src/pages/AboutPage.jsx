@@ -42,6 +42,7 @@ function AboutPage() {
           },
         }
       );
+      console.log(response);
 
       setHealthFoods(response.data); // Update state with fetched data
     } catch (error) {

@@ -15,7 +15,6 @@ function AnalyticsPage() {
   return (
     <PageTemplate>
       <div id="home-title">
-        <div>Insights into Your Health and Wellness</div>
       </div>
 
       <div

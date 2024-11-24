@@ -171,11 +171,12 @@
   .features-section {
     font-family: "Roboto", sans-serif;
     position: absolute;
-    top: 300px;
-    left: -25px;
+    top: 350px;
+    left: 185px;
     display: block;
     text-align: center;
-    width: 95%;
+    width: 55%;
+
     background-color: rgba(255, 248, 248, 0.1);
     border-radius: 8px;
     border: #66fcf1 solid 0.5px;
@@ -183,7 +184,7 @@
   }
 
   .features-section h2 {
-    font-size: 3rem;
+    font-size: 2rem;
     margin-bottom: 1rem;
     color: #fff8f8; /* Deep Navy */
   }
@@ -194,7 +195,7 @@
   }
 
   .features-list li {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     color: #fff8f8; /* Soft Teal */
     display: flex;
     align-items: center;

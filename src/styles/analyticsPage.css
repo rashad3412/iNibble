@@ -129,4 +129,12 @@ h4 {
     position: relative;
     top: 15px;
   }
+
+  .chart-container {
+    max-width: 900px;
+  }
+
+  .align-key-isights-container {
+    max-width: 900px;
+  }
 }
